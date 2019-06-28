@@ -157,3 +157,31 @@ console.log(vendingM.sale(1));
 
 // to call
 vm.sale(1);
+
+// Reverse a string
+function reverseString(str) {
+    let emptyStr = '';
+    for (let i=str.length-1; i>=0; i--) {
+        emptyStr+= str[i];
+    }
+    return emptyStr;
+}
+reverseString('Hello');
+
+// Index of:
+function indexOf(inputArray, inputItem) {
+    const indexValue = inputArray.indexOf(inputItem);
+    return indexValue;
+}
+indexOf([1,2,3,4], 3);
+
+// Prime number
+function isPrime(value) {
+    for(let i = 2; i < value; i++) {
+        if(value % i === 0) {
+            return false;
+        }
+    }
+    return true;
+ } 
+ isPrime(21);
