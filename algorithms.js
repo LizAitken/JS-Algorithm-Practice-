@@ -182,3 +182,38 @@ function isPrime(value) {
 // }
 
 // console.log(isPangram('hello'));
+
+// Find longest Word
+function findLongestWord(str) {
+    let words = str.split(" ");
+    let longest = "";
+    for (let word of words) {
+        if (word.length > longest.length) {
+            longest = word;
+        }
+        return longest.length;
+    }
+}
+
+// OR...
+function findLongestWord(str) {
+    return str.split(" ").sort(function(a, b) {
+        return b.length - a.length
+    })[0];
+}
+
+// Make every word capitalized:
+function titleCase(str) {
+    let words= str.toLowerCase().split(" ");
+    for (let i=0; i<words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].slice(1);        
+    } return words.join();
+}
+
+// OR
+function titleCase(str) {
+    let titled = str.toLowerCase().split(" ").map(function(elem) {
+        return elem[0].toUpperCase() + elem.slice(1);
+    })
+    return titled.join(" ");
+}
