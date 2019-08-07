@@ -169,19 +169,6 @@ function isPrime(value) {
     }
     return true;
  } 
- isPrime(21);
-
-// const alphaStr = 'abcdefghijklmnopqrstuvwxyz';
-// function isPangram(inputStr) {
-//     for (let i = 0; i <= alphaStr.length; i++) {
-//         for (let x=0; x <=inputStr.length; x++) {
-//             // console.log(alphaStr[i]);
-//             console.log(inputStr[i]);
-//         }
-//     }
-// }
-
-// console.log(isPangram('hello'));
 
 // Find longest Word
 function findLongestWord(str) {
