@@ -204,3 +204,58 @@ function titleCase(str) {
     })
     return titled.join(" ");
 }
+
+
+// Find the sum of the array
+function findSum(arr) {
+    let total = 0;
+    for(i=0; i<=arr.length; i++) {
+        total+=arr[i];
+    }
+    return total;
+}
+
+// Convert to military time
+function timeConversion(s) {
+    const arr = s.slice(0, 8).split(':');
+    arr[0] = (s.indexOf('PM') > -1) ?
+        (arr[0] == 12 ? '12' : Number(arr[0]) + 12) :
+        (arr[0] == 12 ? '00' : arr[0]);
+    return arr.join(':');
+}
+
+
+// Create a square
+function printSquare(size) {
+    for (let i = 0; i < size; i++) {
+        stars = ''
+        for (let i = 0; i < size; i++) {
+            stars += '*';
+        }
+        console.log(stars)
+    }
+}
+
+printSquare(5)
+
+// FizzBuzz: 
+// Through an array of numbers, if the number is divisible by 3, make it Fizz. If the number is divisible by 5, make it buzz. 
+// If the number is divisible by 3 and 5, make it FizzBuzz
+
+function fizzBuzz(arrOfNumbers) {
+    for(let i = 0; i < arrOfNumbers.length; i++) {
+        if(arrOfNumbers[i] % 3 === 0 && arrOfNumbers[i] % 5 === 0) {
+            console.log('FizzBuzz');
+        }
+        if(arrOfNumbers[i] % 3 === 0 || arrOfNumbers[i] % 3 === 1 && arrOfNumbers[i] % 5 != 0 && arrOfNumbers[i] % 5 != 1) {
+            console.log('Fizz');
+        }
+        if(arrOfNumbers[i] % 5 === 0 || arrOfNumbers[i] % 5 === 1 && arrOfNumbers[i] % 3 != 0 && arrOfNumbers[i] % 5 != 1) {
+            console.log('Buzz');
+        }
+        else {
+            console.log(arrOfNumbers[i]);
+        }
+    }
+}
+fizzBuzz([1, 3, 5, 15, 10, 22, 20]);
