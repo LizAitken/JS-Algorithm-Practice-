@@ -241,7 +241,6 @@ printSquare(5)
 // FizzBuzz: 
 // Through an array of numbers, if the number is divisible by 3, make it Fizz. If the number is divisible by 5, make it buzz. 
 // If the number is divisible by 3 and 5, make it FizzBuzz
-
 function fizzBuzz(arrOfNumbers) {
     for(let i = 0; i < arrOfNumbers.length; i++) {
         if(arrOfNumbers[i] % 3 === 0 && arrOfNumbers[i] % 5 === 0) {
@@ -259,3 +258,26 @@ function fizzBuzz(arrOfNumbers) {
     }
 }
 fizzBuzz([1, 3, 5, 15, 10, 22, 20]);
+
+// merge two sorted arrays
+function mergeArrays(a, b) {
+    let newArray1 = a + ',' + b;
+    let newArray = newArray1.sort();
+    return newArray;
+}
+console.log(mergeArrays([1, 9, 10], [4, 2, 5, 7]));
+
+// Complete the birthdayCakeCandles function below.
+function birthdayCakeCandles(ar) {
+    let largestNumber = 0;
+    let countNumber = [];
+    for (let i = 0; i <= ar.length; i++) {
+        if (ar[i] > largestNumber) {
+            largestNumber = ar[i];
+        }
+        if (largestNumber > ar[i]) {
+            countNumber.push(largestNumber);
+        }
+    }
+    return countNumber.length;
+}
