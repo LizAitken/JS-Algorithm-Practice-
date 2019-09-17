@@ -170,5 +170,53 @@ function findPairs(arr) {
 }
 console.log(findPairs([10, 20, 20, 10, 10, 30, 50, 10, 20]));
 
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. 
+// Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+function minMaxSum(arr) {
+    arr.sort(function(a, b){
+        return a - b;
+    });
+    let minN = 0;
+    let maxN = 0;
+    for(let i=0; i< arr.length; i++) {
+        if(i < arr.length - 1) {
+            minN += arr[i];
+        } 
+        if(i >= arr.length - 4) {
+            maxN += arr[i];
+        }
+    }  
+    return (minN + ' ' + maxN);
+}
+console.log(minMaxSum([5, 6, 7, 8, 9]));
+
+
+// Grades are from 0-100
+// Failing grade = 40 or below
+// round to the next multiple of 5 if the next multiple of 5 is less than 3
+function roundGrades(grades) {
+    let newGrades = [];
+    for (number in grades) {
+        if (grades[number] < 38) {
+            newGrades.push(grades[number]);
+        }
+        else if (grades[number] % 5 === 0) {
+            newGrades.push(grades[number]);
+        }
+        else if (grades[number] % 5 <= 3) {
+           let remainder = grades[number] % 5;
+           if ((grades[number] - remainder) % 2 === 0) {
+               grades[number] = grades[number] - remainder;
+            }
+           else {
+                grades[number] = (grades[number] - remainder) + 5;
+           }
+           newGrades.push(grades[number]);
+        }
+    }
+    return newGrades;
+}
+console.log(roundGrades([22,23,38,58,50,67,65,61]));
 
 
