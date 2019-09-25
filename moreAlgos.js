@@ -219,4 +219,23 @@ function roundGrades(grades) {
 }
 console.log(roundGrades([22,23,38,58,50,67,65,61]));
 
+// Mark & Toys
+// Find how many numbers in the given array can add up to the number given
+function howMany(arr, num) {
+    arr.sort(function(a, b){
+        return a - b;
+    });
+    let number = 0;
+    let newArr = [];
+    for(let i=0;i< arr.length; i++){
+        if(arr[i] > number && num >= number) {
+            number += arr[i];
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr.length;   
+}
+
+howMany([1, 12, 5, 2, 111, 200, 1000, 10], 50);
+
 
